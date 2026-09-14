@@ -1,1 +1,259 @@
 @charset "utf-8";
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  margin: 0;
+}
+
+.inner {
+  width: 1100px;
+  margin: 0 auto;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 40px;
+  letter-spacing: 10px;
+  margin-bottom: 50px;
+}
+
+/* HEADER */
+
+.header-inner {
+  height: 70px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  color: #777;
+  padding: 15px 0;
+}
+
+.contact-btn {
+  padding: 12px 14px;
+  background: #6ba7eb;
+  color: #fff;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s;  /* ←ホバー時に0.3秒かけて文字の色を#333にする */
+}
+
+.contact-btn:hover {
+  color: #333;  /* ←ホバー時に0.3秒かけて文字の色を#333にする */
+}
+
+/* KEYVISUAL */
+
+.keyvisual {
+  background: url("../img/keyvisual/keyvisual.jpg") no-repeat center/cover;
+  height: 800px;
+  position: relative;
+}
+
+.keyvisual-inner {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  width: 100%;
+}
+
+.main-title {
+  font-size: 65px;
+  font-weight: 700;
+  color: #6ba7eb;
+  white-space: nowrap;
+  margin-bottom: 30px;
+}
+
+.sub-title {
+  font-size: 40px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+}
+
+/* WORK */
+
+.work {
+  background: #e3f2fd;
+  padding: 50px 0 0;
+}
+
+.work-inner {
+  display: flex;
+}
+
+.work-img {
+  width: 40%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.work-img img {
+  width: 250px;
+  display: block;
+}
+
+.work-text {
+  width: 60%;
+  padding-top: 20px;
+}
+
+.work-text .section-title {
+  margin-bottom: 35px;
+}
+
+.work-text p {
+  font-size: 15px;
+  line-height: 18px;
+  word-break: break-all;
+  text-align: center;
+}
+
+/* SKILLS */
+
+.skills {
+  padding: 50px 0 70px;
+  background: #fff;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 1100px;
+}
+
+.skills-item {
+  width: 300px;
+  margin-right: 100px;
+  margin-bottom: 100px;
+}
+
+.skills-item:nth-child(3n) {
+  margin-right: 0;
+}
+
+.skills-item:nth-child(n + 4) {
+  margin-bottom: 0;
+}
+
+.skills-item img {
+  display: block;
+  width: 300px;
+  height: 300px;
+  opacity: 0.7;  /* ←デフォルトの透明度が0.7 */
+  transition: opacity 0.3s;
+}
+
+.skills-item a:hover img {
+  opacity: 1;  /* ←ホバー時に透明度が1.0 */
+}
+
+/* PLAN */
+
+.plan {
+  padding: 50px 0;
+  background: #d0dfea;
+}
+
+.plan-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  color: #333;
+  line-height: 26px;
+}
+
+/* 一番上の見出しだけ青 */
+.plan-table tr:first-child th {
+  background: #6ba7eb;
+  color: #fff;
+  padding: 10px;
+}
+
+.plan-table tr:not(:first-child) th {
+  color: #333;
+  padding: 10px;
+}
+
+.plan-table td {
+  padding: 10px;
+}
+
+.plan-table tr:nth-child(2),
+.plan-table tr:nth-child(4),
+.plan-table tr:nth-child(6) {
+  background: #f9f9f9;
+}
+
+/* 水色の行 */
+.plan-table tr:nth-child(3),
+.plan-table tr:nth-child(5) {
+  background: #e0efff;
+}
+
+/* 中の縦線だけ白 */
+.plan-table th,
+.plan-table td {
+  border-left: 2px solid #fff;
+}
+
+.plan-table th:first-child,
+.plan-table td:first-child {
+  border-left: none;
+}
+
+/* SNS */
+
+.sns {
+  height: 500px;
+  background: #e3f2fd;
+  overflow: hidden;
+}
+
+.sns-inner {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sns a {
+  width: 185px;
+  padding: 25px 0;
+  text-align: center;
+  color: #8c8c8c;
+  font-size: 40px;
+  text-decoration: none;
+  transition: background-color 0.5s;  /* ←ホバー時に0.5秒かけて背景色を#fffにする */
+}
+
+.sns a:hover {
+  background-color: #fff;  /* ←ホバー時に0.5秒かけて背景色を#fffにする */
+}
+
+
+/* FOOTER */
+
+.footer {
+  background: #cfd8dc;
+  text-align: right;
+  padding: 20px 20px 25px;
+}
+
+.footer small {
+  font-size: 10px;
+  letter-spacing: 0.5px;
+}
