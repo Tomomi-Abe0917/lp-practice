@@ -30,6 +30,19 @@ body {
   align-items: center;
 }
 
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  background: #fff;
+}
+
+main {
+  padding-top: 70px;
+}
+
 .logo {
   color: #777;
   padding: 15px 0;
@@ -52,15 +65,10 @@ body {
 
 .keyvisual {
   background: url("../img/keyvisual/keyvisual.jpg") no-repeat center/cover;
-  height: 800px;
-  position: relative;
+  padding: 300px 0;
 }
 
 .keyvisual-inner {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
   text-align: center;
   width: 100%;
 }
@@ -130,29 +138,21 @@ body {
   list-style: none;
   padding: 0;
   margin: 0 auto;
-  display: flex;
-  flex-wrap: wrap;
-  width: 1100px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 100px;
+  width: 100%;
 }
 
 .skills-item {
-  width: 300px;
-  margin-right: 100px;
-  margin-bottom: 100px;
-}
-
-.skills-item:nth-child(3n) {
-  margin-right: 0;
-}
-
-.skills-item:nth-child(n + 4) {
-  margin-bottom: 0;
+  min-width: 0;
 }
 
 .skills-item img {
   display: block;
-  width: 300px;
-  height: 300px;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
   opacity: 0.7;  /* ←デフォルトの透明度が0.7 */
   transition: opacity 0.3s;
 }
