@@ -61,6 +61,29 @@ main {
   color: #333;  /* ←ホバー時に0.3秒かけて文字の色を#333にする */
 }
 
+.header-nav {
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin: 4px 0;
+  background: #777;
+}
+
 /* KEYVISUAL */
 
 .keyvisual {
@@ -176,10 +199,10 @@ main {
   line-height: 26px;
 }
 
-/* 一番上の見出しだけ青 */
+/* PLAN: 青い見出し背景に黒文字を表示 */
 .plan-table tr:first-child th {
   background: #6ba7eb;
-  color: #fff;
+  color: #333;
   padding: 10px;
 }
 
@@ -256,4 +279,152 @@ main {
 .footer small {
   font-size: 10px;
   letter-spacing: 0.5px;
+}
+
+/* TAB: 画面幅1199px以下の調整 */
+@media (max-width: 1199px) {
+  /* TAB/SP: 共通コンテンツ幅を画面の97%にする */
+  .inner {
+    width: 97%;
+  }
+
+  /* キービジュアル: 上下に250pxの余白 */
+  .keyvisual {
+    padding: 250px 20px;
+  }
+
+  .main-title {
+    font-size: 50px;
+    white-space: normal;
+  }
+
+  .sub-title {
+    font-size: 32px;
+    white-space: normal;
+  }
+
+  /* WORK: 画像と文章を縦並びにする */
+  .work-inner {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .work {
+    padding-bottom: 50px;
+  }
+
+  .work-img,
+  .work-text {
+    width: 100%;
+  }
+
+  .work-img {
+    align-items: center;
+  }
+
+  .work-text {
+    padding-top: 30px;
+  }
+
+  /* SKILLS: 1列に並べ、3・7・11枚目の後に間隔を作る */
+  .skills-list {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .skills-item {
+    width: 100%;
+    max-width: 300px;
+    justify-self: center;
+  }
+
+  .skills-item:nth-child(4n - 1) {
+    margin-bottom: 80px;
+  }
+}
+
+/* SP: 画面幅767px以下の調整 */
+@media (max-width: 767px) {
+  /* HEADER: Contactを隠し、ハンバーガーを表示 */
+  .contact-btn {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  /* KEYVISUAL: 上200px、下250pxの余白 */
+  .keyvisual {
+    padding: 200px 16px 250px;
+  }
+
+  .main-title {
+    font-size: 40px;
+  }
+
+  .sub-title {
+    font-size: 30px;
+  }
+
+  /* WORK: セクション上下に50pxの余白 */
+  .work {
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+
+  .work-text {
+    padding-top: 24px;
+  }
+
+  .section-title {
+    font-size: 30px;
+    letter-spacing: 6px;
+    margin-bottom: 30px;
+  }
+
+  /* SKILLS・PLAN: スマホ用にセクション余白を調整 */
+  .skills {
+    padding: 32px 0 48px;
+  }
+
+  .plan {
+    padding: 32px 0;
+  }
+
+  /* PLAN: 表をスマホ幅に合わせ、文字サイズを調整 */
+  .plan-table {
+    table-layout: fixed;
+  }
+
+  .plan-table th {
+    font-size: 14px;
+    line-height: 22px;
+    padding: 6px 3px;
+    overflow-wrap: anywhere;
+  }
+
+  .plan-table td {
+    font-size: 12px;
+    line-height: 18px;
+    padding: 6px 3px;
+    overflow-wrap: anywhere;
+  }
+
+  /* SNS: 縦並びにし、上下50px・左右15pxの余白を設定 */
+  .sns {
+    height: auto;
+    padding: 50px 0;
+  }
+
+  .sns-inner {
+    width: calc(100% - 30px);
+    height: auto;
+    flex-direction: column;
+  }
+
+  .sns a {
+    width: 100%;
+    padding: 50px 0;
+  }
 }
