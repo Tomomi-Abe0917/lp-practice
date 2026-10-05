@@ -241,13 +241,12 @@ main {
 /* SNS */
 
 .sns {
-  height: 500px;
+  padding: 200px 0;
   background: #e3f2fd;
   overflow: hidden;
 }
 
 .sns-inner {
-  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -290,7 +289,7 @@ main {
 
   /* キービジュアル: 上下に250pxの余白 */
   .keyvisual {
-    padding: 250px 20px;
+    padding: 250px 0;
   }
 
   .main-title {
@@ -326,7 +325,7 @@ main {
     padding-top: 30px;
   }
 
-  /* SKILLS: 1列に並べ、3・7・11枚目の後に間隔を作る */
+  /* SKILLS: 1列に並べ、3枚ごとに間隔を作る */
   .skills-list {
     grid-template-columns: 1fr;
     gap: 0;
@@ -338,7 +337,7 @@ main {
     justify-self: center;
   }
 
-  .skills-item:nth-child(4n - 1) {
+  .skills-item:nth-child(3n) {
     margin-bottom: 80px;
   }
 }
@@ -413,13 +412,11 @@ main {
 
   /* SNS: 縦並びにし、上下50px・左右15pxの余白を設定 */
   .sns {
-    height: auto;
     padding: 50px 0;
   }
 
   .sns-inner {
     width: calc(100% - 30px);
-    height: auto;
     flex-direction: column;
   }
 
